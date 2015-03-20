@@ -12,8 +12,13 @@ $(function() {
     var translateX = d3.event.translate[0];
     var translateY = d3.event.translate[1];
 
-    // TODO: make cross-browser compatible
-    $('.container').css("transform", "translate(" + translateX + "px," + translateY + "px) scale(" + scale + ")");
+    var transformString = "translate(" + translateX + "px," + translateY + "px) scale(" + scale + ")";
+
+    $('.container').css({
+      "transform" : transformString,
+      "-webkit-transform" : transformString,
+      "-ms-transform" : transformString
+    });
   }
 });
 
