@@ -26,8 +26,8 @@ div, span {
 
 .outer-container {
   margin: 0;
-  width: 800px;
-  height: 400px;
+  width: 100%;
+  height: 800px;
   overflow: hidden;
   border: 2px solid $color-outer-container-border;
   background-color: $color-outer-container-bg;
