@@ -32,9 +32,11 @@ $(function() {
     })
   }
 
-  var elementZoomedAboveThreshold = function($element) {
+  var elementZoomedAboveThreshold = function(element) {
     var threshold = 2;
-    var elementScaleX = $element.getBoundingClientRect().width / $element.offsetWidth;
+
+    var elementScaleX = element.getBoundingClientRect().width / element.offsetWidth;
+
     return elementScaleX > threshold;
     // return scale > threshold; // shortcut if all things are considered to have the same zoom level
   }
