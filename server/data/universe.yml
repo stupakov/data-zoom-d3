@@ -1,0 +1,81 @@
+name: 'universe'
+children:
+- name: 'galactic supercluster'
+  children:
+  - name: 'galaxy'
+    children:
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+  - name: 'galaxy'
+    children:
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+  - name: 'black hole'
+  - name: 'black hole'
+  - name: 'black hole'
+- name: 'galactic supercluster'
+  children:
+  - name: 'star system'
+  - name: 'star system'
+  - name: 'star system'
+  - name: 'galaxy'
+    children:
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+    - name: 'galactic arm'
+      children:
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
+      - name: 'solar system'
