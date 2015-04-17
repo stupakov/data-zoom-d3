@@ -6,6 +6,14 @@ $color-container-bg: #FCD49D;
 $color-node-container-border: #4F4D4E;
 $color-node-summary-border: #C0FACA;
 
+$transition-duration: .3s;
+
+
+
+////////////
+// LAYOUT //
+////////////
+
 * {
   -moz-transform-origin: 0 0;
   -webkit-transform-origin: 0 0;
@@ -14,14 +22,17 @@ $color-node-summary-border: #C0FACA;
   transform-origin: 0 0;
 }
 
-body {
-  font-family: Sans-Serif;
-  background-color: $color-bg;
-}
-
-div, span {
-  /* border: 0px !important; */
-  box-sizing: border-box;
+// Used by data-zoom to hide elements.
+// Use opacity and visibility instead of display: none so we can use transitions
+.data-node-hidden {
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  border: 0;
+  display: block;
 }
 
 .outer-container {
@@ -41,71 +52,58 @@ div, span {
   box-sizing: border-box;
 }
 
+data-node, data-full, data-summary {
+  display: inline-block;
+  vertical-align: top;
+
+  -webkit-transition: all $transition-duration ease-in-out;
+  -moz-transition: all $transition-duration ease-in-out;
+  -o-transition: all $transition-duration ease-in-out;
+  -ms-transition: all $transition-duration ease-in-out;
+  transition: all $transition-duration ease-in-out;
+}
+
+// This makes each data-full element have half the scale of its parent.
+data-full {
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5);  
+}
+
+//////////////////
+// DEBUG COLORS //
+//////////////////
+data-full {
+  border: 1px solid $color-node-summary-border;
+}
+data-summary {
+  border: 1px solid green;
+}
+
+//////////////////////////////////////
+// DEMO APPLICATION SPECIFIC STYLES //
+//////////////////////////////////////
+body {
+  font-family: Sans-Serif;
+  background-color: $color-bg;
+}
+
+div, span {
+  /* border: 0px !important; */
+  box-sizing: border-box;
+}
+
 h1, ul, li {
   margin: 0;
 }
 
-
-/*layout*/
-
 .node-container {
-  /* margin: 50px auto; */
   border: 2px solid $color-node-container-border;
   background-color: white;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  -ms-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  /*box-sizing: border-box;*/
   width: 200px;
   height: 100px;
   overflow: hidden;
 }
 
-
-.node-container > .node-summary, .node-container > .node-full {
-  display: block;
-  box-sizing: border-box;
-  -webkit-transition: visibility 0.5s ease, opacity 0.5s ease;
-  -moz-transition: visibility 0.5s ease, opacity 0.5s ease;
-  -o-transition: visibility 0.5s ease, opacity 0.5s ease;
-  -ms-transition: visibility 0.5s ease, opacity 0.5s ease;
-  transition: visibility 0.5s ease, opacity 0.5s ease;
-}
-
-.node-container > .node-summary {
-  width: 200px;
-  height: 100px;
-  border: 3px solid $color-node-summary-border;
-}
-.node-container > .node-full {
-  width: 400px;
-  height: 200px;
-  border: 6px solid green;
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -o-transform: scale(0.5);
-  -ms-transform: scale(0.5);
-  transform: scale(0.5);
-}
-
-.node-container.summary > .node-summary,
-.node-container.full > .node-full {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition-delay: 0s;
-  -moz-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  -ms-transition-delay: 0s;
-  transition-delay: 0s;
-}
-
-.node-container.summary > .node-full,
-.node-container.full > .node-summary {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-  border: 0;
-  opacity: 0;
-}

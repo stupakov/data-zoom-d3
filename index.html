@@ -14,21 +14,17 @@
   </head>
 
   <body>
-
     <div class="outer-container">
-      <div id="widgets">
-        <div id="position-dots"></div>
-        <div id="dimensions-widgets"></div>
-      </div>
-
       <div class="container">
-        <div class="node-container">
-          <div class="node-summary">
+        <data-node class="node-container">
+          <data-summary>
+            <div>
             <h1>
               Cool stuff
             </h1>
           </div>
-          <div class="node-full">
+          </data-summary>
+          <data-full>
             <h2>
               All the cool stuff
             </h2>
@@ -36,35 +32,46 @@
               <li>Cool item 1</li>
               <li>Cool item 2</li>
               <li>Cool item 3</li>
-              <div class="node-container">
-                <div class="node-summary">
+              <data-node>
+                <data-summary>
                   <li>Cool item 4</li>
-                </div>
-                <div class="node-full">
+                </data-summary>
+                <data-full class="data-full">
                   <li>
-                  <h2>
                     Cool Item 4
-                  </h2>
-                  <ul>
-                    <li>Is awesome</li>
-                    <li>Is the 4th cool item</li>
-                    <li>Is cool</li>
-                    <li>Is an item</li>
-                  </ul>
+                    <ul>
+                      <li>Is awesome</li>
+                      <li>Is the 4th cool item</li>
+                      <li>Is cool</li>
+                      <data-node>
+                        <data-summary>
+                              <li>Is an item</li>
+                        </data-summary>
+                        <data-full class="data-full">
+                          <li>
+                            Is all of these things:
+                            <ul>
+                              <li>an item</li>
+                              <li>a cool item</li>
+                            </ul>
+                          </li>
+                        </data-full>
+                      </data-node>
+                    </ul>
                   </li>
-                </div>
-              </div>
+                </data-full>
+              </data-node>
             </ul>
-          </div>
-        </div>
+          </data-full>
+        </data-node>
 
-        <div class="node-container">
-          <div class="node-summary">
+        <data-node class="node-container">
+          <data-summary>
             <h1>
               Lame stuff
             </h1>
-          </div>
-          <div class="node-full">
+          </data-summary>
+          <data-full>
             <h2>
               All the lame stuff
             </h2>
@@ -72,8 +79,8 @@
               <li>Who cares 1</li>
               <li>Who cares 2</li>
             </ol>
-          </div>
-        </div>
+          </data-full>
+        </data-node>
 
       </div>
     </div>
