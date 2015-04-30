@@ -1,5 +1,4 @@
 var setUpCustomElements = function() {
-
   var chooseVariantToShow = function(node, summarize) {
     if(summarize) {
       node.showSummary();
@@ -41,8 +40,7 @@ var setUpCustomElements = function() {
   document.registerElement('data-node', {prototype: dataNodeProto});
 }
 
-
-$(function() {
+var initializeZoomBehavior = function(outerContainerSelector) {
   var documentScale; // the current scale level
 
   var zoom = d3.behavior
@@ -50,8 +48,7 @@ $(function() {
   .scaleExtent([1, 16])
   .on("zoom", zoomed);
 
-  var container = d3.select(".outer-container")
-  .call(zoom);
+  var container = d3.select(outerContainerSelector).call(zoom);
 
   function zoomed() {
     documentScale = d3.event.scale;
@@ -84,5 +81,9 @@ $(function() {
   }
 
   setUpCustomElements();
+};
+
+$(function() {
+  initializeZoomBehavior(".outer-container");
 });
 
