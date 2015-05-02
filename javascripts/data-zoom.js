@@ -59,13 +59,13 @@ var DataZoom = (function() {
       var transformString = "translate(" + translateX + "px," + translateY + "px) scale(" + documentScale + ")";
 
       // TODO use a library to handle multi-browser css
-      $('.container').css({
+      $(outerContainerSelector).find('.container').css({
         "transform" : transformString,
         "-webkit-transform" : transformString,
         "-ms-transform" : transformString
       });
 
-      $('data-node').each(function(idx, element) {
+      $(outerContainerSelector).find('data-node').each(function(idx, element) {
         if(elementZoomedAboveThreshold(idx, element)) {
           element.showFull();
         } else {
