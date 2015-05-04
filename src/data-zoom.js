@@ -28,13 +28,18 @@ var DataZoom = (function() {
       showSummary: {
         value: function() {
           this.summaryElement.classList.remove("data-node-hidden");
-          this.fullElement.classList.add("data-node-hidden");
+          // TODO: extract element objects
+          if(this.fullElement) {
+            this.fullElement.classList.add("data-node-hidden");
+          }
         }
       },
       showFull: {
         value: function() {
-          this.fullElement.classList.remove("data-node-hidden");
-          this.summaryElement.classList.add("data-node-hidden");
+          if(this.fullElement) {
+            this.fullElement.classList.remove("data-node-hidden");
+            this.summaryElement.classList.add("data-node-hidden");
+          }
         }
       }
     });
