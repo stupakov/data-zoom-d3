@@ -1,0 +1,47 @@
+$color-bg: #C0FACA;
+$color-outer-container-border: #FA6E7E;
+$color-outer-container-bg: #4F4D4E;
+$color-container-border: #FA6E7E;
+$color-container-bg: #FCD49D;
+$color-node-container-border: #4F4D4E;
+$color-node-summary-border: #C0FACA;
+
+
+.outer-container {
+  margin: 0;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  border: 2px solid $color-outer-container-border;
+  background-color: $color-outer-container-bg;
+}
+
+.container {
+  width: 800px;
+  height: 400px;
+  border: 2px solid $color-container-border;
+  background-color: $color-container-bg;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Sans-Serif;
+  background-color: $color-bg;
+}
+
+div, span {
+  /* border: 0px !important; */
+  box-sizing: border-box;
+}
+
+h1, ul, li {
+  margin: 0;
+}
+
+.node-container {
+  border: 2px solid $color-node-container-border;
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
