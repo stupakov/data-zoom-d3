@@ -6,6 +6,7 @@ $color-container-bg: #FCD49D;
 $color-node-container-border: #4F4D4E;
 $color-node-summary-border: #C0FACA;
 
+$color-text: #eff;
 
 .outer-container {
   margin: 0;
@@ -27,6 +28,8 @@ $color-node-summary-border: #C0FACA;
 body {
   font-family: Sans-Serif;
   background-color: $color-bg;
+  color: $color-text;
+  text-transform: uppercase;
 }
 
 div, span {
@@ -44,4 +47,47 @@ h1, ul, li {
   width: 200px;
   height: 100px;
   overflow: hidden;
+}
+
+// space!
+
+data-node {
+  width: 300px;
+  height: 300px;
+}
+
+@mixin square-image {
+  width:300px;
+  height:300px;
+  background-size: cover;
+}
+
+.galaxy-cluster-1 {
+  @include square-image;
+  background-image: url('../images/galaxy-cluster-1.jpg')
+}
+
+.galaxy-cluster-2 {
+  @include square-image;
+  background-image: url('../images/galaxy-cluster-2.jpg')
+}
+
+.galaxy-1 {
+  @include square-image;
+  background-image: url('../images/spiral-galaxy-1.jpg')
+}
+
+.galaxy-2 {
+  @include square-image;
+  background-image: url('../images/starburst-galaxy-1.jpg')
+}
+
+.solar-system-1 {
+  @include square-image;
+  background-image: url('../images/solar-system-1.jpg')
+}
+
+.solar-system-2 {
+  @include square-image;
+  background-image: url('../images/solar-system-2.jpg')
 }

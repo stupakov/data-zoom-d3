@@ -4,22 +4,38 @@ $(function() {
   // full does not yet support being anything other than a collection of other nodes
   var nodes = [
     {
-      summary: "Cool Stuff",
+      className: "galaxy-cluster-1",
+      summary: "Bunch of galaxies",
       full: [
-        {summary: "Cool thing 1"},
-        {summary: "Cool thing 2"}
+        {
+          className: "galaxy-1",
+          summary: "Sexy spiral galaxy",
+          full: [{
+            className: "solar-system-1",
+            summary: "Uninhabited solar system"
+          },
+          {
+            className: "solar-system-2",
+            summary: "Solar system infested with aliens"
+          }]
+        },
+        {
+          className: "galaxy-2",
+          summary: "Hungry starburst galaxy"
+        }
       ]
     },
     {
-      summary: "Lame Stuff"
+      className: "galaxy-cluster-2",
+      summary: "Another bunch of galaxies"
     }
   ];
 
   var DataNodeGroup = React.createClass({
     render: function() {
-      var groupNodes = this.props.nodes.map(function (dataNode) {
+      var groupNodes = this.props.nodes.map(function (dataNode, idx) {
         return (
-          <DataNode summary={dataNode.summary} full={dataNode.full} />
+          <DataNode summary={dataNode.summary} full={dataNode.full} className={dataNode.className} key={idx} />
         );
       });
 
@@ -37,14 +53,20 @@ $(function() {
       if(this.props.full) {
         fullNode =
           <DataFull>
-        {this.props.full}
-        </DataFull>
+            {this.props.full}
+          </DataFull>
       }
+
+      var summaryNode =
+        <DataSummary
+          content={this.props.summary}
+          className={this.props.className}
+        />
 
       return(
         <data-node>
-        <DataSummary content={this.props.summary} />
-        {fullNode}
+          {fullNode}
+          {summaryNode}
         </data-node>
       );
     }
@@ -53,8 +75,8 @@ $(function() {
   var DataSummary = React.createClass({
     render: function() {
       return(
-        <data-summary>
-        {this.props.content}
+        <data-summary className={this.props.className}>
+          {this.props.content}
         </data-summary>
       );
     }
@@ -69,7 +91,7 @@ $(function() {
 
       return(
         <data-full>
-        {childNodeGroup}
+          {childNodeGroup}
         </data-full>
       );
     }
