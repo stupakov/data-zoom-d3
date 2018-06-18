@@ -1,0 +1,26 @@
+{
+  "name": "data-zoom-d3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy" : "gh-pages -d examples/standalone-example/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stupakov/data-zoom-d3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stupakov/data-zoom-d3/issues"
+  },
+  "homepage": "https://stupakov.github.io/data-zoom-d3",
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  }
+}

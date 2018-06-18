@@ -1,0 +1,7 @@
+TODO:
+
+- only show full version of an element if it is on screen
+  - this is for optimization reasons, but also since the full version may have different dimensions than the summary, we don't want off-screen elements changing shape.
+  - check if any part of an element is on-screen
+  - only apply full class if this is the case
+- do not render the full version of a thing if it is not in full mode (this is an optimization to hide stuff until it is needed).
