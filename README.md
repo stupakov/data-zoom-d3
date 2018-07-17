@@ -1,5 +1,7 @@
 # data-zoom-d3
+
 Zooming UI experiment
+
 A simplified rewrite of https://github.com/stupakov/data-zoom that leverages [d3.zoom](https://github.com/d3/d3-zoom)
 
 ## Objective
